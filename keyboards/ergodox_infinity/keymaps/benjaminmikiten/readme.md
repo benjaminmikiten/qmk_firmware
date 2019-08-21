@@ -1,1 +1,1 @@
-# Ergodox Infinity Layout
+# Benjamin Mikiten's Ergodox Infinity Layout
