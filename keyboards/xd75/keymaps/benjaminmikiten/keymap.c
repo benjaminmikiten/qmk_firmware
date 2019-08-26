@@ -1,8 +1,67 @@
 #include QMK_KEYBOARD_H
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-	[0] = LAYOUT_ortho_5x15(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_F10, KC_F11, KC_F12, KC_6, KC_7, KC_8, KC_9, KC_0, KC_GRV, KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_F7, KC_F8, KC_F9, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, KC_LCTL, KC_A, KC_S, KC_D, KC_F, KC_G, KC_F4, KC_F5, KC_F6, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_F1, KC_F2, KC_F3, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_ENT, MO(2), MO(3), KC_NO, KC_NO, MO(1), KC_SPC, KC_RGUI, KC_RALT, KC_RCTL, KC_NO),
-	[1] = LAYOUT_ortho_5x15(KC_TRNS, RGB_M_B, RGB_M_R, RGB_M_K, BL_INC, BL_INC, RGB_M_P, RGB_M_B, RGB_M_K, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, RGB_TOG, RGB_MOD, RGB_RMOD, RGB_VAD, RGB_VAI, RGB_M_G, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC__VOLDOWN, KC__VOLUP, KC__MUTE, RGB_SPD, RGB_SPI, KC_NO, KC_NO, KC_NO, KC_MINS, KC_EQL, KC_LCBR, KC_RCBR, KC_BSLS, KC_TRNS, KC_TRNS, EEP_RST, DEBUG, RESET, KC_NO, KC_NO, RGB_HUI, RGB_SAI, RGB_VAI, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, RGB_HUD, RGB_SAD, RGB_VAD, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO),
-	[2] = LAYOUT_ortho_5x15(KC_TRNS, KC_NO, KC_P7, KC_P8, KC_P9, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_NO, KC_P4, KC_P5, KC_P6, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_NO, KC_P1, KC_P2, KC_P3, KC_NO, KC_NO, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_TRNS, KC_TRNS, KC_NO, KC_P0, KC_PDOT, KC_PENT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO),
-	[3] = LAYOUT_ortho_5x15(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_ACL0, KC_ACL1, KC_ACL2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO)
+enum layers {
+    _BASE,
+    _RAISE,
+    _LOWER,
+    _MOUSE,
+    _ADJUST
 };
+
+
+
+#define KC_V_DN KC__VOLDOWN
+#define KC_V_UP KC__VOLUP
+
+#define SCN_SHT LSFT(LGUI(LCTL(KC_4)))  // Take a screenshot (MacOS)
+
+#define SFT_ENT SFT_T(KC_ENT)
+#define CTL_ESC CTL_T(KC_ESC)
+
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
+#define MOUSE MO(_MOUSE)
+#define FN MO(_FN)
+
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+	[_BASE] = LAYOUT_ortho_5x15(
+        KC_ESC , KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , KC_F10 , KC_F11 , KC_F12 , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_GRV , \
+        KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , KC_F7  , KC_F8  , KC_F9  , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSPC, \
+        CTL_ESC, KC_A   , KC_S   , KC_D   , KC_F   , KC_G   , KC_F4  , KC_F5  , KC_F6  , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT, \
+        KC_LSFT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , KC_F1  , KC_F2  , KC_F3  , KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, SFT_ENT, \
+        _______, KC_LCTL, KC_LALT, KC_RCMD, KC_ENT , LOWER  , MOUSE  , _______, _______, RAISE  , KC_SPC , KC_LCMD, KC_RALT, KC_RCTL, _______),
+	[_RAISE] = LAYOUT_ortho_5x15(
+        _______, _______, _______, _______, _______, RGB_HUD, RGB_HUI, RGB_M_B, _______, _______, _______, _______, _______, _______, _______,
+        _______, RGB_TOG, RGB_MOD, _______, _______, RGB_SAD, RGB_SAI, RGB_M_R, _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_V_DN, KC_V_UP, KC_MUTE, SCN_SHT, RGB_VAD, RGB_VAI, RGB_M_SN,_______, _______, KC_MINS, KC_EQL, KC_LCBR, KC_RCBR , KC_BSLS,
+        _______, KC_MRWD, KC_MFFD, KC_MPLY, _______, _______, _______, RGB_M_K, _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_BRID, KC_BRIU, CG_SWAP, _______, _______, _______, RGB_M_G, _______, _______, _______, _______, _______, _______, _______),
+
+    [_LOWER] = LAYOUT_ortho_5x15(
+        _______, KC_P7  , KC_P8  , KC_P9  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_P4  , KC_P5  , KC_P6  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, KC_P1  , KC_P2  , KC_P3  , _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, _______,
+        _______, KC_0   , KC_PDOT, KC_PENT, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+
+    [_MOUSE] = LAYOUT_ortho_5x15(
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_WH_D, KC_BTN1, KC_MS_U, KC_BTN2, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_WH_U, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+
+    [_ADJUST] = LAYOUT_ortho_5x15(
+        _______, RESET  , DEBUG  , _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+
+
+};
+
+uint32_t layer_state_set_user(uint32_t state) {
+  return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+}
