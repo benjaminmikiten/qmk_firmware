@@ -1,7 +1,7 @@
 #pragma once
 
 #ifdef AUDIO_ENABLE
-    #define STARTUP_SONG SONG(ZELDA_TREASURE)
+    #define STARTUP_SONG SONG(ZELDA_PUZZLE)
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
@@ -9,6 +9,7 @@
                                   SONG(DVORAK_SOUND) \
                                 }
 #endif
+#define AUDIO_CLICKY
 
 #define MUSIC_MASK (keycode != KC_NO)
 
