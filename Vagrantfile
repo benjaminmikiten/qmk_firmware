@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
 
   # VMware/Virtualbox ( and also Hyperv/Parallels) 64 bit
   config.vm.box = "generic/debian9"
-  
+
   config.vm.synced_folder '.', '/vagrant'
 
   # This section allows you to customize the Virtualbox VM
@@ -25,6 +25,21 @@ Vagrant.configure(2) do |config|
     #         '--vendorid', '0x16c0',
     #         '--productid','0x0478'
     #        ]
+        vb.name = "VM to flash firmware into ProMicro"
+    vb.customize ["modifyvm", :id, "--usb", "on"]
+    vb.customize ["modifyvm", :id, "--usbehci", "on"]
+        vb.customize ["usbfilter", "add", "0",
+                 "--target", :id,
+                 "--name", "Arduino Micro (writable)",
+                 "--vendorid", "2341",
+                 "--productid", "0036",
+                 "--remote", "no"]
+    vb.customize ["usbfilter", "add", "1",
+                 "--target", :id,
+                 "--name", "Arduino Leonardo",
+                 "--vendorid", "2341",
+                 "--productid", "8036",
+                 "--remote", "no"]
     # Customize the amount of memory on the VM:
     vb.memory = "512"
     # Uncomment the below lines if you have time sync
