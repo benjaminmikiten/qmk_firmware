@@ -9,8 +9,9 @@
                                   SONG(DVORAK_SOUND) \
                                 }
 #endif
-#define AUDIO_CLICKY
 
+#define DAC_SAMPLE_MAX 65535U
+#define AUDIO_CLICKY
 #define MUSIC_MASK (keycode != KC_NO)
 
 /*
