@@ -12,3 +12,21 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+# Keyboards
+
+## QMK-compatible
+
+1. HHKB
+2. Preonic
+3. Gherkin
+4. Let’s Split
+5. XD75
+6. Plaid
+7. Ergodox
+
+## Lame
+
+1. Realforce RGB
+2. Unicomp
+3. Ducky Shine (Greens)
