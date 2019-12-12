@@ -30,3 +30,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 1. Realforce RGB
 2. Unicomp
 3. Ducky Shine (Greens)
+
+## Layer Tree
+
+Base
+| Raise
+| Lower
+| Adjust
+
+## Layer Descriptons
