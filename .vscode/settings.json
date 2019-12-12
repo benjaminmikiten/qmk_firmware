@@ -1,5 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "editor.wordWrap": "off",
     // Unofficially, QMK uses spaces for indentation
     "editor.insertSpaces": true,
     // Configure glob patterns for excluding files and folders.
@@ -8,12 +11,12 @@
         "**/*.hex": true
     },
     "files.associations": {
-      "*.h": "c",
-      "*.c": "c",
-      "*.cpp": "cpp",
-      "*.hpp": "cpp",
-      "xstddef": "c",
-      "type_traits": "c",
-      "utility": "c"
+        "*.h": "c",
+        "*.c": "c",
+        "*.cpp": "cpp",
+        "*.hpp": "cpp",
+        "xstddef": "c",
+        "type_traits": "c",
+        "utility": "c"
     }
 }
