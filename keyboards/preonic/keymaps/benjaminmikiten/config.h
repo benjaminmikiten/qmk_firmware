@@ -9,7 +9,6 @@
                                   SONG(DVORAK_SOUND) \
                                 }
 #endif
-
 #define DAC_SAMPLE_MAX 65535U
 #define AUDIO_CLICKY
 #define MUSIC_MASK (keycode != KC_NO)
@@ -37,3 +36,10 @@
 
 /* override number of MIDI tone keycodes (each octave adds 12 keycodes and allocates 12 bytes) */
 //#define MIDI_TONE_KEYCODE_OCTAVES 2
+
+// #undef RGBW
+// #undef RGB_DI_PIN
+// #undef RGBLED_NUM
+// #define RGB_DI_PIN D5
+// #define RGBLED_NUM 9
+// #define RGBLIGHT_ANIMATIONS

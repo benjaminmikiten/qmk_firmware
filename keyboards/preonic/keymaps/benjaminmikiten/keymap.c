@@ -31,7 +31,7 @@ enum preonic_keycodes {
 
 // wait DELAY ms before unregistering media keys
 #define MEDIA_KEY_DELAY 10
-#define TAPPING_TERM 300
+#define TAPPING_TERM 500
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -71,9 +71,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_preonic_grid( \
-  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,   KC_F12, \
+  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12, \
   _______, SIP,     KC_MPLY, KC_MUTE, _______, _______, _______, _______, _______, _______, _______, KC_DEL,  \
-  _______, PXLSNAP,   KC_MFFD, KC_VOLU, KC_BRK , KC_PGUP, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, \
+  _______, PXLSNAP, KC_MFFD, KC_VOLU, KC_BRK , KC_PGUP, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS, \
   _______, _______, KC_MRWD, KC_VOLD, KC_BRMD, KC_PGDN, _______, _______, _______, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
 ),
@@ -85,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |   4  |   5  |   6  |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |   1  |   2  |  3   |      |      |      | LEFT | DOWN |  UP  | RIGHT|      |
+ * |      |   1  |   2  |  3   |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |   .  |   0  |  ENT |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -93,20 +93,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_preonic_grid( \
-  _______, KC_P7,   KC_P8,   KC_P9,   _______, _______, _______, _______, _______, _______, _______, _______, \
-  _______, KC_P4,   KC_P5,   KC_P6,   _______, _______, _______, _______, _______, _______, _______, _______, \
-  _______, KC_P1,   KC_P2,   KC_P3,   _______, _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, _______, \
+  _______, KC_P7,   KC_P8,   KC_P9,   _______, _______, RGB_TOG, RGB_MOD, RGB_RMOD, RGB_M_P, RGB_M_B, RGB_M_R, \
+  _______, KC_P4,   KC_P5,   KC_P6,   _______, _______, RGB_HUI, RGB_SAI, RGB_VAI, RGB_M_SW, RGB_M_SN, RGB_M_K, \
+  _______, KC_P1,   KC_P2,   KC_P3,   _______, _______, RGB_HUD, RGB_SAD, RGB_VAD, RGB_M_X, RGB_M_G, RGB_M_T, \
   _______, KC_PDOT, KC_P0,   KC_PENT, _______, _______, _______, _______, _______, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
 ),
-
 
 
 /* Adjust (Lower + Raise)
  * ,-----------------------------------------------------------------------------------.
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      | Reset|      |      |      |      |      |      |      |      |      |  Del |
+ * |      | Reset| EEPRST |      |      |      |      |      |      |      |     |  Del |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |ClckTg|Mu Mode|Aud on|AudOff|AGnorm|AGswap|Qwerty|Colemk|Dvorak|      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -118,10 +117,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT_preonic_grid( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  \
-  _______, RESET,   DEBUG,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, KC_DEL,  \
+  _______, RESET,   EEP_RST,   _______, _______, _______, _______, TERM_ON, TERM_OFF,_______, _______, KC_DEL,  \
   _______, CK_TOGG, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______, _______, \
-  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, _______, _______, _______, \
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
+  _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, RGB_TOG, RGB_MOD, RGB_M_SW, RGB_M_P, \
+  BACKLIT, _______, _______, _______, _______, _______, _______, _______, RGB_HUI, RGB_SAI, RGB_VAI, _______  \
 ),
 
 
@@ -216,12 +215,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
               backlight_step();
             #endif
             #ifdef __AVR__
-            PORTE &= ~(1<<6);
+            writePinLow(E6);
             #endif
           } else {
             unregister_code(KC_RSFT);
             #ifdef __AVR__
-            PORTE |= (1<<6);
+            writePinHigh(E6);
             #endif
           }
           return false;
