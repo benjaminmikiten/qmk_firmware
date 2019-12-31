@@ -39,7 +39,7 @@ enum userspace_layers {
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_4x12_wrapper(...)       LAYOUT_ortho_4x12(__VA_ARGS__)
 #define LAYOUT_ortho_5x12_wrapper(...)       LAYOUT_ortho_5x12(__VA_ARGS__)
-#define LAYOUT_hhkb_wrapper(...)             LAYOUT_hhkb_wrapper(__VA_ARGS__)
+// #define LAYOUT_hhkb_wrapper(...)             LAYOUT_hhkb_wrapper(__VA_ARGS__)
 
 
 #define _________________QWERTY_L1_________________        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
