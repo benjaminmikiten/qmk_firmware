@@ -2,6 +2,8 @@
 
 #define FN1_Q LT(1, KC_Q)
 
+#define CTLATQ LCTL(LALT(KC_Q))
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [0] = LAYOUT_ortho_3x10(
@@ -13,8 +15,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = LAYOUT_ortho_3x10(
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, BL_INC,
-    _______, _______, _______, _______, _______, _______, RESET,   _______, _______, BL_DEC
+    CTLALQ, _______, _______, _______, _______, _______, RESET,   _______, _______, BL_DEC
   ),
+
 
 };
 
