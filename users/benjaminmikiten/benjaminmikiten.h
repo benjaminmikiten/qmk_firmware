@@ -19,6 +19,7 @@
 /* Define layer names */
 enum userspace_layers {
     _QWERTY  = 0,
+    _GAME,
     _DVORAK,
     _MODS, /* layer 8 */
     _COLEMAK,
