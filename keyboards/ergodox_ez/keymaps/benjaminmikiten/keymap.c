@@ -6,12 +6,12 @@
 #include "debug.h"
 #include "action_layer.h"
 
-enum ergodox_keycodes = {
+enum ergodox_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
   RAISE,
   ADJUST
-}
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |  ESC   |   1  |   2  |   3  |   4  |   5  |      |           |      |   6  |   7  |   8  |   9  |   0  |   `    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |  TAB   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |  BSPC  |
+ * |  TAB   |   Q  |   W  |   E  |   R  |   T  |      |           |      |   Y  |   U  |   I  |   O  |   P  |  B a2aaaaaaaaaa2dsaPC  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * |  LCTRL |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  QUOT  |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -31,13 +31,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | PLAY | MUTE |       | RBG TOG | RGB MOD |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | VOL+ |       | PgUp |        |      |
- *                                 | LOWER|  ENT |------|       |------| SPACE  | RAISE|
+ *                                 | ENTER|LOWER |------|       |------| RAISE  | SPACE|
  *                                 |      |      | VOL- |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
 
 
-[_QWERTY] = LAYOUT_ergodox(
+[_QWERTY] = LAYOUT_ergodox_wrapper(
         // left hand
         KC_ESC,  ________________NUMBER_LEFT________________, XXXXXXX,
         KC_TAB,  _________________QWERTY_L1_________________, XXXXXXX,
@@ -46,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI,
                                                      KC_MPLY, KC_MUTE,
                                                               KC_VOLU,
-                                               LOWER, KC_ENT, KC_VOLD,
+                                              KC_ENT, LOWER, KC_VOLD,
         // right hand
         XXXXXXX, ________________NUMBER_RIGHT_______________, KC_GRV,
         XXXXXXX, _________________QWERTY_R1_________________, KC_BSPC,
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                            KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, XXXXXXX,
         RGB_TOG, RGB_MOD,
         KC_PGUP,
-        KC_PGDN, KC_SPACE, RAISE
+        KC_PGDN, RAISE, KC_SPACE
     ),
 
 /*
@@ -80,9 +80,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 
-[_RAISE] = LAYOUT_ergodox(
+[_RAISE] = LAYOUT_ergodox_wrapper(
        // left hand
-       _______, _________________FUNC_LEFT_________________, _______,
+       RESET,   _________________FUNC_LEFT_________________, _______,
        _______, _________________RAISE_L1__________________, _______,
        _______, _________________RAISE_L2__________________,
        _______, _________________RAISE_L3__________________, _______,
@@ -123,10 +123,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 // MEDIA AND MOUSE
-[_LOWER] = LAYOUT_ergodox(
+[_LOWER] = LAYOUT_ergodox_wrapper(
        _______, _______, _______, _______, _______, _______, _______,
-       _______, _______, _______, KC_MS_U, _______, _______, _______,
-       _______, _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,
+       _______, _______, KC_MS_U, _______, _______, _______, _______,
+       _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______
        _______, _______, _______, _______, _______, _______, _______,
        _______, _______, _______, KC_BTN1, KC_BTN2,
                                                     _______, _______,
@@ -166,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 
-[_ADJUST] = LAYOUT_ergodox(
+[_ADJUST] = LAYOUT_ergodox_wrapper(
        _______, _______, _______, _______, _______, _______, _______,
        _______, _______, _______, _______, _______, _______, _______,
        _______, _______, _______, _______, _______, _______,
@@ -212,7 +212,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             update_tri_layer(_LOWER, _RAISE, _ADJUST);
           }
           return false;
-          break
+          break;
         case RAISE:
           if (record->event.pressed) {
             layer_on(_RAISE);
@@ -223,8 +223,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           }
           return false;
           break;
+        default:
+          break;
     }
-}
+    return true;
+};
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
