@@ -40,6 +40,8 @@ enum userspace_layers {
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_ortho_4x12_wrapper(...)       LAYOUT_ortho_4x12(__VA_ARGS__)
 #define LAYOUT_ortho_5x12_wrapper(...)       LAYOUT_ortho_5x12(__VA_ARGS__)
+#define LAYOUT_ergodox_wrapper(...)          LAYOUT_ergodox(__VA_ARGS__)
+#define LAYOUT_ergodox_pretty_wrapper(...)   LAYOUT_ergodox_pretty(__VA_ARGS__)
 // #define LAYOUT_hhkb_wrapper(...)             LAYOUT_hhkb_wrapper(__VA_ARGS__)
 
 
@@ -69,9 +71,9 @@ enum userspace_layers {
 #define ___________________BLANK___________________        _______, _______, _______, _______, _______
 
 
-#define _________________RAISE_L1__________________        ________________NUMBER_LEFT________________
-#define _________________RAISE_L2__________________        ___________________BLANK___________________
-#define _________________RAISE_L3__________________        ___________________BLANK___________________
+#define _________________RAISE_L1__________________        _______, KC_UP,   _______, _______, _______
+#define _________________RAISE_L2__________________        KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______
+#define _________________RAISE_L3__________________        _______, _______, _______, _______, _______
 
 #define _________________RAISE_R1__________________        ________________NUMBER_RIGHT_______________
 #define _________________RAISE_R2__________________        _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
