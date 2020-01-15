@@ -62,30 +62,38 @@ enum userspace_layers {
 #define _________________DVORAK_R3_________________        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z
 
 
-#define ________________NUMBER_LEFT________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
-#define ________________NUMBER_RIGHT_______________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
+#define ________________NUMBER_LEFT________________        KC_1,    KC_2,    KC_3,    KC_4,    KC_5
+#define ________________NUMBER_RIGHT_______________        KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 
-#define _________________FUNC_LEFT_________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
-#define _________________FUNC_RIGHT________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
+#define _________________FUNC_LEFT_________________        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
+#define _________________FUNC_RIGHT________________        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
 
 #define ___________________BLANK___________________        _______, _______, _______, _______, _______
 
+#define _______________WASD_ARROWS_1_______________        _______, KC_UP,   _______, _______, _______
+#define _______________WASD_ARROWS_2_______________        KC_LEFT, KC_DOWN, KC_RGHT, _______, _______
 
-#define _________________RAISE_L1__________________        _______, KC_UP,   _______, _______, _______
-#define _________________RAISE_L2__________________        KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______
-#define _________________RAISE_L3__________________        _______, _______, _______, _______, _______
+#define _____________VIM_ARROWS____________                KC_LEFT, KC_DOWN, KC_LEFT, KC_RIGHT
 
-#define _________________RAISE_R1__________________        ________________NUMBER_RIGHT_______________
+#define _______________MOUSE_ARROWS_1______________        KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, _______
+#define _______________MOUSE_ARROWS_2______________        KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, _______
+#define _______________MOUSE_ARROWS_3______________        KC_ACL0, KC_ACL1, KC_ACL2, _______, _______
+
+#define _________________RAISE_L1__________________        _______, KC_UP,   _______, KC_MUTE, LCKSCRN
+#define _________________RAISE_L2__________________        KC_LEFT, KC_DOWN, KC_RGHT, KC_VOLU, KC_BRIU
+#define _________________RAISE_L3__________________        KC_MPRV, KC_MNXT, KC_MPLY, KC_VOLD, KC_BRID
+
+#define _________________RAISE_R1__________________        _______, _______, _______, _______, _______
 #define _________________RAISE_R2__________________        _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC
 #define _________________RAISE_R3__________________        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 
 
 #define _________________ADJUST_L1_________________        RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
-#define _________________ADJUST_L2_________________        MU_TOG , CK_TOGG, AU_ON,   AU_OFF,  CG_NORM
-#define _________________ADJUST_L3_________________        RGB_RMOD,RGB_HUD,RGB_SAD, RGB_VAD, KC_RGB_T
+#define _________________ADJUST_L2_________________        RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, _______
+#define _________________ADJUST_L3_________________        RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW,_______
 
-#define _________________ADJUST_R1_________________        KC_SEC1, KC_SEC2, KC_SEC3, KC_SEC4, KC_SEC5
-#define _________________ADJUST_R2_________________        CG_SWAP, QWERTY,  COLEMAK, DVORAK,  WORKMAN
-#define _________________ADJUST_R3_________________        MG_NKRO, KC_MUTE, KC_VOLD, KC_VOLU, KC_MNXT
+#define _________________ADJUST_R1_________________        _______, _______, _______, _______, _______
+#define _________________ADJUST_R2_________________        CG_SWAP, QWERTY,  _______, _______, _______
+#define _________________ADJUST_R3_________________        MU_TOG , CK_TOGG, AU_ON,   AU_OFF,  CG_NORM
 
 #endif
