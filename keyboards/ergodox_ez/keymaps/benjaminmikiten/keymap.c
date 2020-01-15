@@ -43,19 +43,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  _________________QWERTY_L1_________________, XXXXXXX,
         KC_LCTL, _________________QWERTY_L2_________________,
         KC_LSFT, _________________QWERTY_L3_________________, XXXXXXX,
-        XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, LOWER
+        LCKSCRN, KC_LCTL, KC_LALT, KC_LGUI, LOWER,
                                                      KC_MPLY, KC_MUTE,
                                                               KC_VOLU,
-                                               KC_ENT, LOWER, KC_VOLD,
+                                            KC_ENT, KC_SPACE, KC_VOLD,
         // right hand
         XXXXXXX, ________________NUMBER_RIGHT_______________, KC_GRV,
         XXXXXXX, _________________QWERTY_R1_________________, KC_BSPC,
                  _________________QWERTY_R2_________________, KC_QUOT,
         XXXXXXX, _________________QWERTY_R3_________________, KC_SFTENT,
-                             RAISE, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT,
+                           RAISE, _____________VIM_ARROWS____________,
         RGB_TOG, RGB_MOD,
         KC_PGUP,
-        KC_PGDN, RAISE, KC_SPACE
+        KC_PGDN, KC_ENT, KC_SPACE
     ),
 
 /*
@@ -80,9 +80,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 
+
+/*
+ * RAISE LAYER CONCEPT
+ * - The top row is left blank to access the numbers, as I frequently reach for
+ * shifted numbers while holding down RAISE. This causes me to insert a debug
+ * breakpoint in VSCode which is a pain.
+ *  - The RAISE RH default is great for this, as I'm using the same symbol
+ * row on all my ortho keyboards.
+ *  - The left hand is could either be an arrow cluster or a mouse cluster.
+ *
+ */
+
 [_RAISE] = LAYOUT_ergodox_wrapper(
        // left hand
-       RESET,   _________________FUNC_LEFT_________________, _______,
+       RESET,   ___________________BLANK___________________, _______,
        _______, _________________RAISE_L1__________________, _______,
        _______, _________________RAISE_L2__________________,
        _______, _________________RAISE_L3__________________, _______,
@@ -91,7 +103,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                              _______,
                                             _______,_______, _______,
        // right hand
-       _______, _________________FUNC_RIGHT________________, _______,
+       _______, ___________________BLANK___________________, _______,
        _______, _________________RAISE_R1__________________, KC_DEL,
                 _________________RAISE_R2__________________, KC_BSLS,
        _______, _________________RAISE_R3__________________, _______,
@@ -117,30 +129,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |      |       |PXLSNP|      |      |
  *                                 |      |      |------|       |------|      |      |
- *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |      |       | SIP  |      |      |
  *                                 `--------------------'       `--------------------'
  */
 // MEDIA AND MOUSE
 [_LOWER] = LAYOUT_ergodox_wrapper(
-       _______, _______, _______, _______, _______, _______, _______,
-       _______, _______, KC_MS_U, _______, _______, _______, _______,
-       _______, KC_MS_L, KC_MS_D, KC_MS_R, _______, _______
-       _______, _______, _______, _______, _______, _______, _______,
-       _______, _______, _______, KC_BTN1, KC_BTN2,
+       _______, _________________FUNC_LEFT_________________, _______,
+       _______, _______________MOUSE_ARROWS_1______________, _______,
+       _______, _______________MOUSE_ARROWS_2______________,
+       _______, _______________MOUSE_ARROWS_3______________, _______,
+       _______, _______, _______, _______, _______,
                                                     _______, _______,
                                                              _______,
                                            _______, _______, _______,
     // right hand
-       _______, _______, _______, _______, _______, _______, _______,
+       _______, _________________FUNC_RIGHT________________, _______,
        _______, _______, KC_P7,   KC_P8,   KC_P9,   _______, _______,
                 _______, KC_P4,   KC_P5,   KC_P6,   _______, _______,
        _______, _______, KC_P1,   KC_P2,   KC_P3,   _______, _______,
                          KC_PDOT, KC_P0,   KC_PENT, _______, _______,
        _______, _______,
-       _______,
-       _______, _______, _______
+       PXLSNAP,
+       SIP,     _______, _______
 ),
 
 
@@ -168,18 +180,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] = LAYOUT_ergodox_wrapper(
        _______, _______, _______, _______, _______, _______, _______,
-       _______, _______, _______, _______, _______, _______, _______,
-       _______, _______, _______, _______, _______, _______,
-       _______, _______, _______, _______, _______, _______, _______,
+       _______, _________________ADJUST_L1_________________, _______,
+       _______, _________________ADJUST_L2_________________,
+       _______, _________________ADJUST_L3_________________, _______,
        _______, _______, _______, _______, _______,
                                                     _______, _______,
                                                              _______,
                                            _______, _______, _______,
     // right hand
        _______,  _______, _______, _______, _______, _______, _______,
-       _______,  _______, _______, _______, _______, _______, _______,
-                 _______, _______, _______, _______, _______, _______,
-       _______,  _______, _______, _______, _______, _______, _______,
+       _______,  _________________ADJUST_R1_________________, _______,
+                 _________________ADJUST_R2_________________, _______,
+       _______,  _________________ADJUST_R3_________________, _______,
                           _______, _______, _______, _______, _______,
        _______, _______,
        _______,
@@ -242,10 +254,13 @@ void matrix_scan_user(void) {
   switch (layer) {
     // TODO: Make this relevant to the ErgoDox EZ.
     case _RAISE:
-      ergodox_right_led_1_on();
+      ergodox_right_led_3_on();
       break;
     case _LOWER:
       ergodox_right_led_2_on();
+      break;
+    case _ADJUST:
+      ergodox_right_led_1_on();
       break;
     default:
       // none
