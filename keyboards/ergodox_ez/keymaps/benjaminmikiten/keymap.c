@@ -25,13 +25,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LSHIFT |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | SFT/ENT|
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |      |  CTL |  ALT | GUI  |LOWER |                                       |RAISE | LEFT | DOWN |  UP  | RIGHT |
- *   `----------------------------------'                                       `----------------------------------'
+ *   | LKSCRN |  CTL |  ALT | GUI  |LOWER |                                       |RAISE | LEFT | DOWN |  UP  | RIGHT |
+ *   `-----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,--------------------.
  *                                        | PLAY | MUTE |       | RBG TOG | RGB MOD |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | VOL+ |       | PgUp |        |      |
- *                                 | ENTER|LOWER |------|       |------| RAISE  | SPACE|
+ *                                 | ENTER|SPACE |------|       |------| ENTER  | SPACE|
  *                                 |      |      | VOL- |       | PgDn |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -48,14 +48,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               KC_VOLU,
                                             KC_ENT, KC_SPACE, KC_VOLD,
         // right hand
-        XXXXXXX, ________________NUMBER_RIGHT_______________, KC_GRV,
+        KC_DEL,  ________________NUMBER_RIGHT_______________, KC_GRV,
         XXXXXXX, _________________QWERTY_R1_________________, KC_BSPC,
                  _________________QWERTY_R2_________________, KC_QUOT,
-        XXXXXXX, _________________QWERTY_R3_________________, KC_SFTENT,
+        XXXXXXX, _________________QWERTY_R3_________________, KC_RSFT,
                            RAISE, _____________VIM_ARROWS____________,
         RGB_TOG, RGB_MOD,
         KC_PGUP,
-        KC_PGDN, KC_ENT, KC_SPACE
+        KC_PGDN,
+        KC_ENT, KC_SPACE
     ),
 
 /*
@@ -149,7 +150,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        _______, _______, KC_P7,   KC_P8,   KC_P9,   _______, _______,
                 _______, KC_P4,   KC_P5,   KC_P6,   _______, _______,
        _______, _______, KC_P1,   KC_P2,   KC_P3,   _______, _______,
-                         KC_PDOT, KC_P0,   KC_PENT, _______, _______,
+                         _______, KC_P0,   KC_PENT, _______, _______,
        _______, _______,
        PXLSNAP,
        SIP,     _______, _______
