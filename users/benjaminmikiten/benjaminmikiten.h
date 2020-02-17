@@ -73,7 +73,7 @@ enum userspace_layers {
 #define _______________WASD_ARROWS_1_______________        _______, KC_UP,   _______, _______, _______
 #define _______________WASD_ARROWS_2_______________        KC_LEFT, KC_DOWN, KC_RGHT, _______, _______
 
-#define _____________VIM_ARROWS____________                KC_LEFT, KC_DOWN, KC_LEFT, KC_RIGHT
+#define _____________VIM_ARROWS____________                KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT
 
 #define _______________MOUSE_ARROWS_1______________        KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U, _______
 #define _______________MOUSE_ARROWS_2______________        KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, _______
