@@ -40,16 +40,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT_ergodox_wrapper(
         // left hand
         KC_ESC,  ________________NUMBER_LEFT________________, XXXXXXX,
-        KC_TAB,  _________________QWERTY_L1_________________, XXXXXXX,
+        KC_TAB,  _________________QWERTY_L1_________________, KC_DEL,
         KC_LCTL, _________________QWERTY_L2_________________,
-        KC_LSFT, _________________QWERTY_L3_________________, XXXXXXX,
+        KC_LSFT, _________________QWERTY_L3_________________, KC_BSPC,
         LCKSCRN, KC_LCTL, KC_LALT, KC_LGUI, LOWER,
                                                      KC_MPLY, KC_MUTE,
                                                               KC_VOLU,
                                             KC_ENT, KC_SPACE, KC_VOLD,
         // right hand
-        KC_DEL,  ________________NUMBER_RIGHT_______________, KC_GRV,
-        XXXXXXX, _________________QWERTY_R1_________________, KC_BSPC,
+        XXXXXXX, ________________NUMBER_RIGHT_______________, KC_GRV,
+        KC_DEL,  _________________QWERTY_R1_________________, KC_BSPC,
                  _________________QWERTY_R2_________________, KC_QUOT,
         XXXXXXX, _________________QWERTY_R3_________________, KC_RSFT,
                            RAISE, _____________VIM_ARROWS____________,
