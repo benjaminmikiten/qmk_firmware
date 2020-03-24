@@ -89,17 +89,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * breakpoint in VSCode which is a pain.
  *  - The RAISE RH default is great for this, as I'm using the same symbol
  * row on all my ortho keyboards.
- *  - The left hand is could either be an arrow cluster or a mouse cluster.
+ *
+ *  - RAISE LH is custom, a change from the template because we don't need all
+ * the media stuff in it since this board has room for all the media stuff
  *
  */
 
 [_RAISE] = LAYOUT_ergodox_wrapper(
        // left hand
        RESET,   ___________________BLANK___________________, _______,
-       _______, _________________RAISE_L1__________________, _______,
-       _______, _________________RAISE_L2__________________,
-       _______, _________________RAISE_L3__________________, _______,
-       _______, _______, _______,_______,_______,
+       _______, _______, KC_UP,   _______, _______, _______, _______,
+       _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+       _______, _______, _______, _______, _______, _______, _______,
+       _______, _______, _______, _______, _______,
                                                     _______, _______,
                                                              _______,
                                             _______,_______, _______,
