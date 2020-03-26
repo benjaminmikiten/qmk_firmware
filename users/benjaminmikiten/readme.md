@@ -23,7 +23,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 4. Let’s Split
 5. XD75
 6. Plaid
-7. Ergodox
+7. Ergodox Infinity
+8. Gherkin
+9. Ergodox EZ
 
 ## Lame
 
