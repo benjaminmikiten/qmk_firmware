@@ -39,15 +39,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, KC_MINS, KC_EQL,  KC_BSLS, KC_GRV,
       KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_LBRC, KC_RBRC, KC_BSPC,
       KC_LCTL, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_QUOT, KC_ENT,
-      KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSFT, M_RAISE,
-      _______, KC_LALT, KC_LGUI,                            KC_SPACE,                                    KC_RGUI, KC_RALT, _______
+      KC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSPC, M_RAISE,
+      XXXXXXX, KC_LALT, KC_LGUI,                            KC_SPACE,                                    KC_RGUI, KC_RALT, XXXXXXX
   ),
 
   [_DVORAK] = LAYOUT_wrapper(
       KC_ESC,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, KC_MINS, KC_EQL,  KC_BSLS, KC_GRV,
       KC_TAB,  _________________DVORAK_L1_________________, _________________DVORAK_R1_________________, KC_LBRC, KC_RBRC, KC_BSPC,
       KC_LCTL, _________________DVORAK_L2_________________, _________________DVORAK_R2_________________, KC_QUOT, KC_ENT,
-      KC_LSFT, _________________DVORAK_L3_________________, _________________DVORAK_R3_________________, KC_RSFT, M_RAISE,
+      KC_LSPO, _________________DVORAK_L3_________________, _________________DVORAK_R3_________________, KC_RSPC, M_RAISE,
       _______, KC_LALT, KC_LGUI,                            KC_SPACE,                                    KC_RGUI, KC_RALT, _______
   ),
 
