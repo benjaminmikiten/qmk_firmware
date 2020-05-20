@@ -27,6 +27,8 @@ enum userspace_layers {
     _MACROS,
     _MEDIA,
     _LOWER,
+    _PLOVER,
+    _NUMPAD,
     _RAISE,
     _ADJUST,
 };
@@ -90,7 +92,7 @@ enum userspace_layers {
 
 #define _________________ADJUST_L1_________________        RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, RGB_TOG
 #define _________________ADJUST_L2_________________        RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, _______
-#define _________________ADJUST_L3_________________        RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW,_______
+#define _________________ADJUST_L3_________________        RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW,RBG_M_G
 
 #define _________________ADJUST_R1_________________        _______, _______, _______, _______, _______
 #define _________________ADJUST_R2_________________        CG_TOGG, QWERTY,  _______, _______, _______
