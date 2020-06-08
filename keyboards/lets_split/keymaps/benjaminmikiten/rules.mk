@@ -1,0 +1,2 @@
+BOOTLOADER = caterina
+BOOTMAGIC_ENABLE = full
