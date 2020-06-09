@@ -58,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_QWERTY] = LAYOUT_ortho_4x12_wrapper(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-    TAB_CTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT ,
-    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_ESC,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC,
+    TAB_CTL, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_QUOT,
+    KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_SFTENT ,
+    _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________
 ),
 
 /* Colemak
@@ -76,10 +76,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_COLEMAK] = LAYOUT_ortho_4x12_wrapper(
-    KC_ESC,  KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSPC,
-    TAB_CTL, KC_A,    KC_R,    KC_S,    KC_T,    KC_D,    KC_H,    KC_N,    KC_E,    KC_I,    KC_O,    KC_QUOT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT ,
-    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_ESC,  ________________COLEMAK_L1_________________, ________________COLEMAK_R1_________________, KC_BSPC,
+    TAB_CTL, ________________COLEMAK_L2_________________, ________________COLEMAK_R2_________________, KC_QUOT,
+    KC_LSFT, ________________COLEMAK_L3_________________, ________________COLEMAK_R3_________________, KC_SFTENT,
+    _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________
 ),
 
 /* Dvorak
@@ -94,10 +94,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = LAYOUT_ortho_4x12_wrapper(
-    KC_ESC,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSPC,
-    TAB_CTL, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH,
-    KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_SFTENT ,
-    BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    KC_ESC,  _________________DVORAK_L1_________________, _________________DVORAK_R1_________________, KC_BSPC,
+    TAB_CTL, _________________DVORAK_L2_________________, _________________DVORAK_R2_________________, KC_SLSH,
+    KC_LSFT, _________________DVORAK_L3_________________, _________________DVORAK_R3_________________, KC_SFTENT,
+    _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________
 ),
 
 /* Lower
@@ -112,10 +112,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_LOWER] = LAYOUT_ortho_4x12_wrapper(
-    _______, _________________FUNC_LEFT_________________, _________________FUNC_RIGHT________________,  KC_DEL,
-    _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP,  KC_RIGHT, _______, _______,
+    _______, _________________FUNC_LEFT_________________, _________________FUNC_RIGHT________________, KC_DEL,
+    _______, KC_F11, KC_F12,   _______, _______, _______, _________________LOWER_R2__________________, _______,
     _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, ___________________BLANK___________________, ___________________BLANK___________________, _______
 
 ),
 /* Raise
@@ -130,10 +130,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_ortho_4x12_wrapper(
-    KC_GRV,  ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, _______,
-    _______, KC_VOLD, KC_VOLU, KC_MUTE, KC_MSTP, _______, _________________RAISE_R2__________________, KC_BSLS,
-    _______, _______, _______, _______, _______, _______, _________________RAISE_R3__________________, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+    _______, ________________NUMBER_LEFT________________, ________________NUMBER_RIGHT_______________, KC_GRAVE,
+    _______, _________________RAISE_L2__________________, _________________RAISE_R2__________________, KC_BSLS,
+    _______, _________________RAISE_L3__________________, _________________RAISE_R3__________________, _______,
+    _______, ___________________BLANK___________________, ___________________BLANK___________________, _______
 ),
 
 /* Plover layer (http://opensteno.org)

@@ -2,7 +2,7 @@
 #define USERSPACE
 
 #include "quantum.h"
-
+#include QMK_KEYBOARD_H
 // Short Macros
 #define UNDO    LGUI(KC_Z)
 #define REDO    LGUI(KC_Y)
@@ -50,8 +50,8 @@ enum userspace_layers {
 
 #define _____________VIM_ARROWS___________                 KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
 
-#define _____________________BOTTOM_L0______________________        _______, KC_LCTL, KC_ALT, KC_GUI, LOWER, KC_ENT
-#define _____________________BOTTOM_R0______________________        KC_SPC, RAISE, _____________VIM_ARROWS____________
+#define _____________________BOTTOM_L0______________________        BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER, KC_ENT
+#define _____________________BOTTOM_R0______________________        KC_SPC, RAISE, _____________VIM_ARROWS___________
 
 #define _________________QWERTY_L1_________________        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T
 #define _________________QWERTY_L2_________________        KC_A,    KC_S,    KC_D,    KC_F,    KC_G
@@ -105,7 +105,7 @@ enum userspace_layers {
 #define _________KP_2____________                          KC_KP_1, KC_KP_2, KC_KP_3
 #define _________KP_3____________                          KC_PDOT, KC_KP_0, KC_PENT
 
-#define _________________LOWER_L0__________________        _________KP_0____________, _______, _______
+#define _________________LOWER_L0__________________        _________KP_0____________, KC_NLCK, _______
 #define _________________LOWER_L1__________________        _________KP_1____________, _______, _______
 #define _________________LOWER_L2__________________        _________KP_2____________, _______, _______
 #define _________________LOWER_L3__________________        _________KP_3____________, _______, _______
