@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_BSPC,  \
   CTL_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, KC_QUOT, \
   KC_LSFT, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_SFTENT,  \
-  LCKSCRN, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE, _____________VIM_ARROWS___________ \
+  _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________ \
 ),
 
 /* Raise
@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  ________________COLEMAK_L1_________________, ________________COLEMAK_R1_________________, KC_BSPC,  \
   CTL_ESC, ________________COLEMAK_L2_________________, ________________COLEMAK_R2_________________, KC_QUOT, \
   KC_LSFT, ________________COLEMAK_L3_________________, ________________COLEMAK_R3_________________, KC_SFTENT,  \
-  BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE, _____________VIM_ARROWS___________  \
+  _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________  \
 ),
 
 /* Dvorak
@@ -164,7 +164,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,  _________________DVORAK_L1_________________, _________________DVORAK_R1_________________, KC_BSPC,  \
   CTL_ESC, _________________DVORAK_L1_________________, _________________DVORAK_R2_________________, KC_SLSH, \
   KC_LSFT, _________________DVORAK_L1_________________, _________________DVORAK_R3_________________, KC_SFTENT,  \
-  BACKLIT, KC_LCTL, KC_LALT, KC_LGUI, LOWER,   KC_ENT,  KC_SPC,  RAISE, _____________VIM_ARROWS___________ \
+  _____________________BOTTOM_L0______________________, _____________________BOTTOM_R0______________________ \
 )
 
 };
