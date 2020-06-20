@@ -31,7 +31,7 @@ enum preonic_keycodes {
 
 // wait DELAY ms before unregistering media keys
 #define MEDIA_KEY_DELAY 10
-#define TAPPING_TERM 500
+// #define TAPPING_TERM 500
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
