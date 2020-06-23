@@ -3,14 +3,16 @@
 // 2. The media keys work on OSX (But not on Windows).
 #include "benjaminmikiten.h"
 #include QMK_KEYBOARD_H
-#include "debug.h"
-#include "action_layer.h"
+// #include "debug.h"
+// #include "action_layer.h"
 
 enum ergodox_keycodes {
   QWERTY = SAFE_RANGE,
   LOWER,
   RAISE,
-  ADJUST
+  ADJUST,
+  COLEMAK,
+  DVORAK
 };
 
 
@@ -54,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_DEL,  _________________QWERTY_R1_________________, KC_BSPC,
                  _________________QWERTY_R2_________________, KC_QUOT,
         XXXXXXX, _________________QWERTY_R3_________________, KC_RSPC,
-                           RAISE, _____________VIM_ARROWS____________,
+                           RAISE, _____________VIM_ARROWS___________,
         RGB_TOG, RGB_MOD,
         KC_PGUP,
         KC_PGDN,
@@ -140,6 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                 `--------------------'       `--------------------'
  */
 // MEDIA AND MOUSE
+
 [_LOWER] = LAYOUT_ergodox_wrapper(
        _______, _________________FUNC_LEFT_________________, _______,
        _______, _______________MOUSE_ARROWS_1______________, _______,
