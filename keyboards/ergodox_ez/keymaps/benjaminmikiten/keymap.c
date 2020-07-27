@@ -12,7 +12,8 @@ enum ergodox_keycodes {
   RAISE,
   ADJUST,
   COLEMAK,
-  DVORAK
+  DVORAK,
+  NUMPAD
 };
 
 
@@ -55,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         XXXXXXX, ________________NUMBER_RIGHT_______________, KC_GRV,
         KC_DEL,  _________________QWERTY_R1_________________, KC_BSPC,
                  _________________QWERTY_R2_________________, KC_QUOT,
-        XXXXXXX, _________________QWERTY_R3_________________, KC_RSPC,
+        NUMPAD, _________________QWERTY_R3_________________, KC_RSPC,
                            RAISE, _____________VIM_ARROWS___________,
         RGB_TOG, RGB_MOD,
         KC_PGUP,
@@ -218,9 +219,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            _______, _______, _______,
     // right hand
        _______,  _______, _______, _______, _______, _______, _______,
-       _______,  _________________ADJUST_R1_________________, _______,
-                 _________________ADJUST_R2_________________, _______,
-       _______,  _________________ADJUST_R3_________________, _______,
+       _______,  _________________ADJUST_R1_________________, RGB_HUI,
+                 _________________ADJUST_R2_________________, RGB_SAI,
+       _______,  _________________ADJUST_R3_________________, RGB_VAI,
                           _______, _______, _______, _______, _______,
        _______, _______,
        _______,
