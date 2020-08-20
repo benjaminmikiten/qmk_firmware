@@ -99,22 +99,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_P1, KC_P2, KC_P3, \
         LAYERS, KC_P0, KC_PENT \
     ),
+      [_LAYERS] = LAYOUT(
+        TENKEY, FN1 ,    FN2   ,\
+        MOUSE , EMOJI  , SWEARS, \
+        XXXXAPPSXXX, XXXXXXX, XXXXXXX,\
+        LAYERS , _______, _______ \
+    ),
     [_TENKEY] = LAYOUT (
         KC_PSLS, KC_PAST, KC_PMNS, \
         KC_NLCK, KC_PEQL, KC_PPLS, \
         XXXXXXX, XXXXXXX, KC_PDOT, \
         BASE   , XXXXXXX, KC_PENT \
     ),
-    [_LAYERS] = LAYOUT(
-        TENKEY, FN1 ,    APPS   ,\
-        MOUSE , EMOJI  , SWEARS, \
-        XXXXXXX, XXXXXXX, XXXXXXX,\
-        LAYERS , _______, _______ \
-    ),
+
      [_FN1] = LAYOUT(
         SCN_SHT, SCN_LCK, XXXXXXX, \
         KC_MRWD, KC_MFFD, KC_MFFD, \
         KC__MUTE, KC__VOLUP, KC__VOLDOWN, \
+        BASE   , XXXXXXX, XXXXXXX \
+    ),
+     [_FN2] = LAYOUT(
+        KC_INS, KC_HOME, KC_PGUP, \
+        KC_DEL, KC_END,  KC_PGDN, \
+        XXXXXXX, XXXXXXX, XXXXXXX, \
         BASE   , XXXXXXX, XXXXXXX \
     ),
     [_APPS] = LAYOUT(
