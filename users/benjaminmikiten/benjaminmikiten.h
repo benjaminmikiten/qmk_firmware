@@ -35,6 +35,7 @@ enum userspace_layers {
 };
 
 
+
 #if (!defined(LAYOUT) && defined(KEYMAP))
 #    define LAYOUT KEYMAP
 #endif
@@ -126,5 +127,19 @@ enum userspace_layers {
 #define _________________ADJUST_R1_________________        _______, TERM_ON, TERM_OFF,_______, _______
 #define _________________ADJUST_R2_________________        AG_SWAP, QWERTY,  COLEMAK, DVORAK,  _______
 #define _________________ADJUST_R3_________________        MI_OFF,  _______, RGB_TOG, RGB_MOD, RGB_M_SW
+
+
+
+
+#define ____________________RGB0___________________       RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_SPI
+#define ____________________RGB1___________________       _______, RGB_RMOD,RGB_HUD, RGB_SAD, RGB_SPD
+#define ____________________RGB3___________________       RGB_M_B, RGB_M_SW,RGB_M_G, RGB_SAD, RGB_SPD
+
+
+#define _____FUNCTION_BLOCK_0____                          KC_PSCR, KC_SLCK, KC_PAUS
+#define _____FUNCTION_BLOCK_1____                          KC_INS,  KC_HOME, KC_PGUP
+#define _____FUNCTION_BLOCK_2____                          KC_DEL,  KC_END,  KC_PGDN
+
+#define _____________HHKB_MEDIA___________                 KC_VOLD, KC_VOLU, KC_MUTE, KC_MSTP
 
 #endif
