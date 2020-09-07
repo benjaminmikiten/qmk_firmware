@@ -16,9 +16,10 @@
 
 #include QMK_KEYBOARD_H
 
-#define _LAYERS 0
-#define _NUMPAD 1
+#define _BASE 0
+#define _LAYERS 1
 #define _NUMPAD2 2
+#define _NUMPAD 3
 #define _FN1 4
 #define _FN2 5
 #define _APPS 6
@@ -94,19 +95,18 @@ const uint32_t PROGMEM unicode_map[] = {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
+    [_BASE] = LAYOUT(
+        KC_P7, KC_P8, KC_P9, \
+        KC_P4, KC_P5, KC_P6, \
+        KC_P1, KC_P2, KC_P3, \
+        KC_PDOT, KC_P0, KC_PENT \
+    ),
     [_LAYERS] = LAYOUT(
       NUMPAD,  NUMPAD2, FN1 ,\
       FN2,     MOUSE , SWEARS, \
       XXXXXXX, XXXXXXX, XXXXXXX,\
       LAYERS , _______, _______ \
 
-    ),
-    [_NUMPAD] = LAYOUT(
-        KC_P7, KC_P8, KC_P9, \
-        KC_P4, KC_P5, KC_P6, \
-        KC_P1, KC_P2, KC_P3, \
-        LAYERS, KC_P0, KC_PENT \
     ),
     [_NUMPAD2] = LAYOUT (
         KC_PSLS, KC_PAST, KC_PMNS, \
